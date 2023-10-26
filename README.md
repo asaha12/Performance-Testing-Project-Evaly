@@ -1,15 +1,15 @@
-# Performance Testing 
+# Performance Testing OpenCart Website
 ## Table of Content
-- [Introduction](https://github.com/asaha12/Performance-Testing-Project-1#introduction)
-- [Install](https://github.com/asaha12/Performance-Testing-Project-1#install)
-- [Prerequisites](https://github.com/asaha12/Performance-Testing-Project-1#Prerequisites)
-- [Elements of a minimal test plan](https://github.com/asaha12/Performance-Testing-Project-1#Elements-of-a-minimal-test-plan)
-- [Test Plan](https://github.com/asaha12/Performance-Testing-Project-1#Test-Plan)
-- [Load Testing Report](https://github.com/asaha12/Performance-Testing-Project-1#Load-Testing-Report)
-- [Summary Load Testing](https://github.com/asaha12/Performance-Testing-Project-1#Summary-Load-Testing)
-- [Conclusion](https://github.com/asaha12/Performance-Testing-Project-1#Conclusion)
+- [Introduction](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#introduction)
+- [Install](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#install)
+- [Prerequisites](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#Prerequisites)
+- [Elements of a minimal test plan](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#Elements-of-a-minimal-test-plan)
+- [Test Plan](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#Test-Plan)
+- [Load Testing Report](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#Load-Testing-Report)
+- [Summary Load Testing](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#Summary-Load-Testing)
+- [Conclusion](https://https://github.com/asaha12/Performance-Testing-Project-Evaly#Conclusion)
 ## Introduction
-- This report provides an overview of the load testing, stress testing, and spike testing conducted on the Opencart website. The objective of this testing was to evaluate the system's performance under various load conditions and ensure it meets the specified requirements.
+- This report provides an overview of the load testing, stress testing, and spike testing conducted on the evaly.com.bd website. The objective of this testing was to evaluate the system's performance under various load conditions and ensure it meets the specified requirements.
 ## Install
 - **Java**  
 https://www.oracle.com/java/technologies/downloads/
@@ -17,6 +17,9 @@ https://www.oracle.com/java/technologies/downloads/
 - **JMeter**  
 https://jmeter.apache.org/download_jmeter.cgi     
 - =>**apache-jmeter-5.5.zip**
+
+- **We use BlazeMeter to generate JMX files**    
+https://chrome.google.com/webstore/detail/blazemeter-the-continuous/mbopgmdnpcbohhpnfglgohlbhfongabi?hl=en
 
 ## Prerequisites
 - As of JMeter 4.0, Java 8 and above are supported.
@@ -37,9 +40,9 @@ https://jmeter.apache.org/download_jmeter.cgi
 ## Test Plan
 
 Testplan > Add > Threads (Users) > Thread Group (this might vary depending on the JMeter version you are using)
-- Name: Thread Group
-- Number of Threads (users): 3000, 4000, 5000
-- Ramp-Up Period (in seconds): 100 for 3000 & 4000, 10 for 50000  
+- Name: Evaly
+- Number of Threads (users): 20
+- Ramp-Up Period (in seconds): 10
 - Loop Count: 1  
 
   1) The general setting for the tests execution, such as whether Thread Groups will run simultaneously or sequentially, is specified in the item called Test Plan.
@@ -51,43 +54,33 @@ Testplan > Add > Threads (Users) > Thread Group (this might vary depending on th
   4) The HTTP Header Manager, which allows you to provide the Request Headers that will be utilized by the upcoming HTTP Requests, is the first item in Thread Groups.
  ## Collection of API
 
--  
-    ### List of API 
+- Run BlazeMeter  
+- Collect Frequently used API  
+- Save the JMX file then paste => **apache-jmeter-5.5\bin**
 
-    - [https://www.restful-booker.herokuapp.com/auth](https://www.restful-booker.herokuapp.com/auth)-Login
-    - [https://www.restful-booker.herokuapp.com/booking](https://www.restful-booker.herokuapp.com/booking)-Set Booking
-    - [https://www.restful-booker.herokuapp.com/booking/bookingid](https://www.restful-booker.herokuapp.com/booking/bookingid)-Get Booking
-    - [https://www.restful-booker.herokuapp.com/booking/bookingid](https://www.restful-booker.herokuapp.com/booking/bookingid)-Update Booking
-    - [https://www.restful-booker.herokuapp.com/booking/bookingid](https://www.restful-booker.herokuapp.com/booking/bookingid)-Delete Booking
-    - 
+    
 
-![image](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/fdfa2c90-c23b-4f7b-8446-90e283719520)
+![image](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/58500aa3-912b-4216-b0cd-ed6d981f278b)
 
 ## Load Testing Report
 
-| Concurrent Request  | Loop Count | Total Samples  | Error Rate | Throughput |
-|               :---: |      :---: |                      :---: |                        :---: |      :---: |
-| 3000  | 1  | 15000  | 0%      | 148.89   |
-| 4000  | 1  | 20000  | 0%      | 195.91   |
-| 5000  | 1  | 25000  | 16.44%  | 350.31   |
+![image](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/d4051a3b-e122-4b44-a312-21203d42eef9)
 
-
-**Number of Threads 3000 & 4000; Ramp-Up Period 100s**
- |  Errors 3000 & 4000 Threads
+**Number of Threads 20; Ramp-Up Period 10s**
+ |  Errors 20 Threads
 :-------------------------:
-![a](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/ca7d0536-d520-4ffb-9495-769b180ed9f1)
+![a](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/464fe39f-4931-4b46-a934-167391b534ea)
 
-**Number of Threads 5000 Ramp-Up Period 10s**
-
-Errors 5000 Threads            
+Errors 
 :-------------------------:
-![a](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/528e7567-28ae-455e-8df8-df61c67348d0) 
+![a](https://github.com/asaha12/cricket_19_keyboard/assets/113898640/944a54b0-5816-4935-8582-31160bdb7384) 
 
 
 
 ## Summary Load Testing
-- While executing 3000 & 4000 concurrent requests, 0 requests got connection timeout and the error rate is 0%.
-- Server can handle almost concurrent 900 API calls with almost zero (0) error rate.
+- While executing concurrent requests, 31 errors of 429/Too Many Requests and the error rate is 1.07%.
+- Server can handle almost concurrent all API calls with almost zero (0) error rate.
+
 
 
 ## Conclusion
@@ -114,5 +107,5 @@ The performance testing conducted on the Opencart website provided valuable insi
 - Conduct a comprehensive database performance tuning exercise to optimize queries and indexing.
 - Explore CDN integration to enhance content delivery and reduce latency for users.
 - Continuously monitor and optimize resource utilization for optimal system performance.
-- The insights gained from this performance testing will serve as a roadmap for optimizing the application's performance, ensuring a seamless and responsive user   experience even during peak load times.
+- The insights gained from this performance testing will serve as a roadmap for optimizing the application's performance, ensuring a seamless and responsive user experience even during peak load times.
 
